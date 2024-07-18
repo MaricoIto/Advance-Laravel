@@ -44,6 +44,7 @@
         <td>{{$author->nationality}}</td>
     </tr>
     <tr>
+        <th></th>
         <td>
             <form action="/delete?id={{$author->id}}" method="POST">
                 @csrf
