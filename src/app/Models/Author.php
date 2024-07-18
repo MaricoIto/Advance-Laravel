@@ -11,7 +11,7 @@ class Author extends Model
 
     protected $fillable = ['name', 'age', 'nationality'];
 
-    public function Maricos()
+    public function getDetail()
     {
         $txt = 'ID:' . $this->id . ' ' . $this->name . '(' . $this->age . '歳' . ')' . $this->nationality;
         return $txt;
