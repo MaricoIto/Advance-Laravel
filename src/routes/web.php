@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PenController;
 use App\Models\Person;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +53,12 @@ Route::get('softdelete/absolute', function () {
     $result = Person::onlyTrashed()->forceDelete();
     echo $result;
 });
+Route::get('uuid', function () {
+    $products = Product::all();
+    foreach ($products as $product) {
+        echo $product . '<br>';
+    }
+});
+Route::get('fill', [PenController::class, 'fillPen']);
+Route::get('create', [PenController::class, 'createPen']);
+Route::get('insert', [PenController::class, 'insertPen']);
